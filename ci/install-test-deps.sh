@@ -47,7 +47,8 @@ coverage \
 flake8 \
 pytest \
 pytest-cov \
-pytest-mock
+pytest-mock \
+numba
 
 conda activate omnisci-dev
 
