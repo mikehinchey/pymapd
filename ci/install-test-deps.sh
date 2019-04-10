@@ -49,7 +49,7 @@ pytest \
 pytest-cov \
 pytest-mock
 
-source activate omnisci-dev
+conda activate omnisci-dev
 
 pip install -e .
 conda list omnisci-dev
