@@ -34,7 +34,7 @@ conda install -q conda-build anaconda-client conda-verify --yes
 
 echo
 echo "[add channels]"
-conda config --add channels conda-forge || exit 1
+conda config --add channels conda-forge rapidsai || exit 1
 
 conda create -n omnisci-dev python=${PYTHON} \
 thrift=0.11.0 \
@@ -50,7 +50,8 @@ pytest-cov \
 pytest-mock \
 numba \
 cudf \
--c rapidsai
+cudatoolkit
+
 
 conda activate omnisci-dev
 
