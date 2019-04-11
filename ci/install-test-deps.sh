@@ -48,7 +48,9 @@ flake8 \
 pytest \
 pytest-cov \
 pytest-mock \
-numba
+numba \
+cudf \
+-c rapidsai
 
 conda activate omnisci-dev
 
