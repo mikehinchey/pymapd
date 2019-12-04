@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -Eex
 
 echo
 echo "[conda build]"
@@ -9,13 +9,13 @@ echo "[add channels]"
 conda config --add channels conda-forge
 conda config --add channels rapidsai
 
-conda create -n omnisci-dev python=${PYTHON} \
+conda create -y -n omnisci-dev python=${PYTHON} \
 thrift=0.11.0 \
 numpydoc \
 "pyarrow>=0.12.0,<0.14" \
-sqlalchemy>=1.3 \
-numpy>=1.16 \
-pandas>=0.24 \
+"sqlalchemy>=1.3" \
+"numpy>=1.16" \
+"pandas>=0.24" \
 coverage \
 flake8 \
 pytest \
@@ -28,6 +28,9 @@ cudatoolkit \
 rbc
 
 conda activate omnisci-dev
+conda info
+
+conda env export -n omnisci-dev
 
 pip install -e .
 conda list omnisci-dev
